@@ -1,0 +1,183 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+public class Main
+{
+	public static void main(String[] args) {
+		
+		int n=5;
+		int star=1,space=n-1;
+		for(int i=1;i<=2*n-1;i++)
+		{
+		    //space loop
+		    for(int j=1;j<=space;j++)
+		    {
+		        System.out.print(" ");
+		    }
+		    // star printinng loop
+		    for(int k=1;k<=star;k++)
+		    {
+		        if(k==1 || k==star)
+		        {
+		        System.out.print("*");
+		        }
+		        else
+		        {
+		            System.out.print(" ");
+		        }
+		    }
+		    
+		    // i<n 
+		    if(i<n)
+		    {
+		        star+=2;
+		        space-=1;
+		    }
+		    // i==n
+		    if(i==n)
+		    {
+		        star-=2;
+		        space+=1;
+		    }
+		    // i>n
+		    if(i>n)
+		    {
+		        star-=2;
+		        space+=1;
+		    }
+		    
+		    System.out.println();
+		    
+		}
+		
+		
+		
+		System.out.println("\n mirror image pattern ");
+		int st=n,sp=0;
+		for(int i=1;i<=2*n-1;i++)
+		{
+		    //space loop
+		    for(int j=1;j<=sp;j++)
+		    {
+		        System.out.print(" ");
+		    }
+		    // star printing loop
+		    for(int k=1;k<=st;k++)
+		    {
+		        if(i==1 || i==2*n-1 || k==1 || k==st)
+		        {
+		        System.out.print("* ");
+		        }
+		        else
+		        {
+		            System.out.print("  ");
+		        }
+		    }
+		    //i<n
+		    if(i<n)
+		    {
+		       st-=1;
+		       sp+=1;
+		    }
+		    // i==n
+		    if(i==n)
+		    {
+		        st+=1;
+		        sp-=1;
+		    }
+		    //i>n
+		    if(i>n)
+		    {
+		        st+=1;
+		        sp-=1;
+		    }
+		    
+		    System.out.println();
+		}
+		
+		
+		System.out.println("\n butterfly pattern");
+		
+		int stars=1,spaces=n-1;
+		
+		for(int i=1;i<=2*n;i++)
+		{
+		    //star printing loop.
+		    for(int j=1;j<=stars;j++)
+		    {
+		        System.out.print("*");
+		    }
+		    // space loop
+		    for(int k=1;k<=spaces ;k++)
+		    {
+		        System.out.print("  ");
+		    }
+		    //star printing loop.
+		    for(int j=1;j<=stars;j++)
+		    {
+		         System.out.print("*");
+		      // if(j==1 || j==stars)
+		      //  {
+		      //  System.out.print("*");
+		      //  }
+		      //  else
+		      //  {
+		      //      System.out.print(" ");
+		      //  }
+		     
+		    }
+		    //i<n
+		    if(i<n)
+		    {
+		        stars+=1;
+		        spaces-=1;
+		    }
+		    if(i==n)
+		    {
+		        stars=n;
+		        spaces=0;
+		    }
+		    if(i>n)
+		    {
+		        stars-=1;
+		        spaces+=1;
+		    }
+		    
+		    System.out.println();
+		}
+		
+		System.out.println("\n right half diamond star pattern");
+		int str=1;
+		for(int i=1;i<=2*n-1;i++)
+		{
+		    //star printing loop
+		    for(int j=1;j<=str;j++ )
+		    {
+		        System.out.print("*");
+		    }
+		    // i<n
+		    if(i<n)
+		    {
+		        str+=1;
+		    }
+		    if(i==n)
+		    {
+		        str-=1;
+		    }
+		    // i>n
+		    if(i>n)
+		    {
+		        str-=1;
+		    }
+
+
+		    System.out.println();
+		}
+		
+	}
+}
