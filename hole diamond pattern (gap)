@@ -1,0 +1,85 @@
+// diamond pattern 
+
+// input n=11;
+
+// output :                  row count 11 , no elemenets in column starts from n+1(12).
+
+/* 
+************
+*****  *****
+****    ****
+***      ***
+**        **
+*          *
+**        **
+***      ***
+****    ****
+*****  *****
+************
+*/
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Scanner scanner = new Scanner(System.in);
+	    
+	    System.out.println("enter N value :");
+	    int n=scanner.nextInt();
+	    
+	    int mid=n/2+1;
+	    
+	    if(n%2!=0)
+	    {
+	       
+	       for(int i=1;i<=n;i++)
+	       {
+	           if(i<=mid)
+	           {
+    	           for(int j=i;j<=mid;j++)
+    	           {
+    	               System.out.print("*");
+    	           }
+    	           
+    	           for(int k=1;k<i;k++) // 1,2,3,4,5,6
+    	           {         //  space     0,2,4,6,8,10.
+    	               System.out.print("  ");
+    	           }
+    	   
+    	           for(int j=i;j<=mid;j++)
+    	           {
+    	               System.out.print("*");
+    	           }
+	           
+	           }
+	           
+	           else
+	           {
+	               for(int j=mid;j<=i;j++)
+	               {
+	                   System.out.print("*");
+	               }
+	               // 8,6,4,2,0
+	               for(int k=1;k<2*mid-i;k++)
+	               {
+	                   System.out.print("  ");
+	               }
+	               
+	               for(int j=mid;j<=i;j++)
+	               {
+	                   System.out.print("*");
+	               }
+	           }
+	           System.out.println();
+	           
+	       }
+	       
+	    }
+	    else
+	    {
+	        System.out.println(" Enter Odd Number");
+	    }
+
+	}
+}
