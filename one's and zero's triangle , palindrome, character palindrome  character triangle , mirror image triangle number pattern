@@ -1,0 +1,145 @@
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    int n=5;
+	
+	System.out.println(" one's and zero's triangle pattern");
+	
+	for(int i=1;i<=n;i++)
+	{
+	    for(int j=1;j<=i;j++)
+	    {
+	        if((i+j)%2==0)
+	        {
+	            System.out.print("1 ");
+	        }
+	        else
+	        {
+	            System.out.print("0 ");
+	        }
+	    }
+	    System.out.println();
+	}
+	
+	System.out.println("\ncharacter triangle pattern ");
+	char c='a';
+	
+	for(int i=1;i<=n;i++)
+	{
+	    for(int j=1;j<=i;j++)
+	    {
+	        if((i+j)%2==0)
+	        {
+	            System.out.print(Character.toUpperCase(c)+" ");
+	            c++;
+	        }
+	        else
+	        {
+	        System.out.print(c+" ");
+	        c++;
+	        }
+	    }
+	    System.out.println();
+	    
+	}
+	
+	System.out.println("\npalindrome pattern");
+	
+	for(int i=1;i<=n;i++) // outer loop
+	{
+	    // space loop 
+	    for(int j=1;j<=n-i;j++)
+	    {
+	        System.out.print("  ");
+	    }
+	    
+	    for(int k=i;k>=1;k--) // loop for print elements
+	    {
+	        System.out.print(k+" ");
+	    }
+	    
+	    for(int l=2;l<=i;l++)
+	    {
+	        System.out.print(l+" ");
+	    }
+	    
+	    System.out.println();
+	}
+	
+	System.out.println("\n character palindrome pattern");
+	
+	String str="ABCDE";
+	char right='B';
+	
+	
+	for(int i=1;i<=n;i++)
+	{
+	    
+	    right='B';
+	    for(int j=1;j<=n-i;j++)
+	    {
+	        System.out.print("  ");
+	    }
+	    for(int k=i;k>=1;k--)
+	    {
+	        System.out.print(str.charAt(k-1)+" ");
+	        
+	    }
+	    
+	    for(int l=2;l<=i;l++)
+	    {
+	        System.out.print(right+" ");
+	        right++;
+	    }
+	    System.out.println();
+	}
+	
+	System.out.println("\n inverse pyramid number pattern");
+	
+	for(int i=1;i<=n;i++)
+	{
+	    for(int k=1;k<i;k++)
+	    {
+	        System.out.print(" ");
+	    }
+	    for(int j=i;j<=n;j++)
+	    {
+	        System.out.print(j+" ");
+	    }
+	    System.out.println();
+	}
+	
+	System.out.println("\n mirror image triangle number pattern ");
+	
+	for(int i=1;i<=n;i++)
+	{
+	    
+	    for(int k=1;k<=i;k++)
+	    {
+	        System.out.print(" ");
+	    }
+	
+    	for(int j=i;j<=n;j++)
+    	{
+    	    System.out.print(j+" ");
+    	}
+    	
+    	System.out.println();    
+	}
+	
+	for(int i=1;i<n;i++)
+	{
+	    for(int k=i;k<n;k++)
+	    {
+	        System.out.print(" ");
+	    }
+	    for(int j=n-i;j<=n;j++)
+	    {
+	        System.out.print(j+" ");
+	    }
+	    System.out.println();
+	}
+	
+	}
+}
