@@ -1,0 +1,173 @@
+/******************************************************************************
+pattern 1
+input n=5;
+output :
+1
+2 6
+3 7 10
+4 8 11 14 
+5 9 12 14 15
+
+pattern 2 
+input n=10 ;
+
+output
+1 3 6 10
+2 5 9
+4 8
+7
+
+pattern 3
+n=5;
+
+     1
+    1 1
+   1 2 1
+  1 3 3 1
+ 1 4 6 4 1
+ 
+ look and say pattern 4
+ 
+ input String str="1",int n=5;
+ 
+ output :
+  1
+  11
+  21
+  1211
+  111221
+ 
+*******************************************************************************/
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		
+		int n=5;
+		int n2=10;
+		String a="1";
+		importantpattern1(n);
+		importantpattern2(n2);
+		importantpattern3(n);
+		lookAndSayPattern(a,n);
+		
+	}
+	
+	
+	public static void importantpattern1(int n){
+	    
+	
+		for(int i=1;i<=n;i++)
+		{
+		    int col=4;
+		    int val=i;
+		    System.out.print(i+" ");
+		    for(int j=1;j<i;j++)
+		    {
+		        val+=col;
+		        System.out.print(val+" ");
+		        col--;
+		    }
+		    
+		    System.out.println();
+		}
+		
+		System.out.println("\n");
+		
+	}
+	
+	public static void importantpattern2(int n)
+	{
+	    ArrayList<Integer> list = new ArrayList<>();
+	    int start=1;
+	    for(int i=0;i<n;i++)
+	    {
+	        start+=i;
+	        
+	        if(start>n)
+	        {
+	            break;
+	        }
+	        
+	        list.add(start);
+	    }
+	    int row_increment=2,col_increment=0,value=0;
+	    for(int i=0;i<list.size();i++)
+	    {
+	        System.out.print(list.get(i)+" ");
+	        value=list.get(i);
+	        col_increment=row_increment;
+	        while(value+col_increment<=n)
+	        {
+	            value+=col_increment;
+	            System.out.print(value+" ");
+	            col_increment++;
+	        }
+	        
+	        System.out.println();
+	        row_increment++;
+	    }
+	    
+	    System.out.println("\n");
+	}
+	
+	public static void importantpattern3(int n)
+	{
+	    for(int i=0;i<n;i++)
+	    {
+	        // space loop;
+	        for(int j=i;j<n;j++)
+	        {
+	            System.out.print(" ");
+	        }
+	        // number printing loop .
+	        int number=1;
+	        for(int k=0;k<=i;k++)
+	        {
+	            System.out.print(number+" ");
+	            number=number*(i-k)/(k+1);
+	        }
+	        
+	        System.out.println();
+	    }
+	    
+	    System.out.println("\n");
+	}
+	
+	public static void lookAndSayPattern(String str,int n)
+	{
+	    System.out.println(str);
+	    
+	    int i=1,count=0;
+	   
+	    
+	    while(i<n)
+	    {
+	        String new_string="";
+	        char c =str.charAt(0);
+	        count=1;
+	        
+	        for(int j=1;j<str.length();j++)
+	        {
+	            if(str.charAt(j)!=str.charAt(j-1))
+	            {
+	                System.out.print(count+""+c+"");
+	                new_string+=""+count+""+c;
+	                count=1;
+	                c=str.charAt(j);
+	            }
+	            else
+	            {
+	                count++;
+	            }
+	        }
+	        System.out.print(count+""+c+"");
+	        new_string+=""+count+""+c;
+	        str=new_string;
+	        
+	        System.out.println();
+	        i++;
+	    }
+	    
+	}
+}
